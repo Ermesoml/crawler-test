@@ -1,0 +1,13 @@
+path
+/
+/login
+/admin
+/backoffice
+/dashboard
+/api
+/wp-admin
+/search
+/robots.txt
+/humans.txt
+/sitemap.xml
+/.well-known/security.txt
