@@ -36,4 +36,13 @@ describe('CsvParser', () => {
     await expect(csvParser.parseCsv(filePath)).rejects.toThrow(error);
     expect(mockFs.readFileSync).toHaveBeenCalledWith(filePath, { encoding: 'utf-8' });
   });
+
+  it('should reject with an error if parsing fails', async () => {
+    const filePath = 'test.csv';
+    const fileContent = 'invalid-csv-data'; // No delimiter, invalid CSV
+    mockFs.readFileSync.mockReturnValue(fileContent);
+
+    await expect(csvParser.parseCsv(filePath)).rejects.toThrow('Invalid CSV format');
+    expect(mockFs.readFileSync).toHaveBeenCalledWith(filePath, { encoding: 'utf-8' });
+  });
 });

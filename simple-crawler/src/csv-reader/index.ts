@@ -13,7 +13,10 @@ export class CsvParser<T> {
       }, (err, records: T[]) => {
         if (err) {
           reject(err);
-        } else {
+        } else if (records.length === 0 && fileContent.length > 0) {
+          reject(new Error('Invalid CSV format'));
+        }
+         else {
           resolve(records);
         }
       });
