@@ -5,6 +5,7 @@ class TxtFileWriter {
   constructor(filePath) {
     this.filePath = filePath;
     this.ensureDirectoryExistence(filePath);
+    this.deleteOldResultsFile(filePath);
   }
 
   ensureDirectoryExistence(filePath) {
@@ -13,6 +14,12 @@ class TxtFileWriter {
       return;
     }
     fs.mkdirSync(dirname, { recursive: true });
+  }
+
+  deleteOldResultsFile(filePath) {
+    if (fs.existsSync(filePath)) {
+      fs.unlinkSync(filePath);
+    }
   }
 
 

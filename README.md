@@ -1,6 +1,6 @@
 # crawler-test
 
-This project is a simple web crawler built with Typescript.
+This project is a simple web crawler built with JavaScript.
 
 ## Project Description
 
@@ -8,11 +8,10 @@ This project crawls websites based on provided domains and paths, extracting and
 
 ## Valid Commands
 
-The following commands can be executed from the `simple-crawler` directory:
+The following commands can be executed from the `simple-crawler-js` directory:
 
 * `npm run test`: Runs the test suite.
 * `npm run coverage`: Runs the test suite with coverage reports.
-* `npm run build`: Compiles the TypeScript code to JavaScript.
 * `npm run start`: Starts the crawler.
 
 ## Input Files
@@ -24,4 +23,5 @@ The crawler uses the following CSV files as input:
 
 ## Output Files
 
-The crawler outputs results to the `results` directory..
+The crawler outputs results to the `results` directory.
+The old results outputs is always being deleted when running the project.
