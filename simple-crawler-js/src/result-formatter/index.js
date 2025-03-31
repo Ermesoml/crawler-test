@@ -1,7 +1,5 @@
-import { TxtFileWriter } from "../file-writer/index.js";
-export class ResultFormatter {
-    fileWriter;
-
+const { TxtFileWriter } = require("../file-writer/index.js");
+class ResultFormatter {
     constructor(filePath) {
         this.fileWriter = new TxtFileWriter(filePath);
     }
@@ -21,7 +19,7 @@ export class ResultFormatter {
             globalStats.pathsTestedCount += 1;
 
             const currentResult = domainsResults.get(result.domain)
-            const statusCount = (currentResult?.pathStatus[result.status ?? 0]) + 1;
+            const statusCount = (currentResult?.pathStatus[result.status] ?? 0) + 1;
             const validPaths = [...(currentResult?.validPaths ?? [])];
 
             if (result.status === 200) validPaths.push(result.path)
@@ -73,3 +71,4 @@ export class ResultFormatter {
         return domainText;
     }
 }
+module.exports = { ResultFormatter };

@@ -1,8 +1,6 @@
-import * as fastq from "fastq";
+const fastq = require("fastq");
 
-export class MemoryQueue {
-    queue;
-
+class MemoryQueue {
     constructor (concurrency, worker) {
         this.queue = fastq.promise(worker, concurrency);
     }
@@ -11,3 +9,5 @@ export class MemoryQueue {
         return this.queue.push(task)
     }
 }
+
+module.exports = { MemoryQueue };

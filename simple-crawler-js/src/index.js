@@ -1,6 +1,6 @@
-import { CsvParser } from "./csv-reader/index.js";
-import { ResultFormatter } from "./result-formatter/index.js";
-import { UrlsAnalyser } from "./urls-analyser/index.js";
+const { CsvParser } = require("./csv-reader/index.js");
+const { ResultFormatter } = require("./result-formatter/index.js");
+const { UrlsAnalyser } = require("./urls-analyser/index.js");
 
 async function start() {
     const csvReader = new CsvParser();

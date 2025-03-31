@@ -1,7 +1,7 @@
-import { parse } from 'csv-parse';
-import * as fs from 'fs';
+const { parse } = require('csv-parse');
+const fs = require('fs');
 
-export class CsvParser {
+class CsvParser {
   async parseCsv(filePath) {
     const fileContent = fs.readFileSync(filePath, { encoding: 'utf-8' });
 
@@ -23,3 +23,5 @@ export class CsvParser {
     });
   }
 }
+
+module.exports = { CsvParser };

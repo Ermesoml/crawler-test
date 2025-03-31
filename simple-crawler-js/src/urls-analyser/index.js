@@ -1,7 +1,5 @@
-import { MemoryQueue } from "../queue/index.js";
-export class UrlsAnalyser {
-    analyserQueue;
-
+const { MemoryQueue } = require("../queue/index.js");
+class UrlsAnalyser {
     constructor() {
         this.analyserQueue = new MemoryQueue(4, this.urlCheckerTask.bind(this))
         console.debug("UrlsAnalyser initialized");
@@ -60,3 +58,4 @@ export class UrlsAnalyser {
         return Promise.all(promises);
     }
 }
+module.exports = { UrlsAnalyser };

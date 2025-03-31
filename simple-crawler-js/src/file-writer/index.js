@@ -1,9 +1,7 @@
-import * as fs from 'fs';
-import * as path from 'path';
+const fs = require('fs');
+const path = require('path');
 
-export class TxtFileWriter {
-  filePath;
-
+class TxtFileWriter {
   constructor(filePath) {
     this.filePath = filePath;
     this.ensureDirectoryExistence(filePath);
@@ -22,3 +20,5 @@ export class TxtFileWriter {
     fs.appendFileSync(this.filePath, text + '\n');
   }
 }
+
+module.exports = { TxtFileWriter };
