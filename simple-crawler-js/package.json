@@ -1,0 +1,22 @@
+{
+  "name": "simple-crawler-js",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "csv-parse": "^5.6.0",
+    "fastq": "^1.19.1"
+  }
+}
